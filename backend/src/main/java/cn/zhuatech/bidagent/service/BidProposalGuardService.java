@@ -8,9 +8,16 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-/** 标书建议安全门：价格承诺、资质缺口和偏离项必须由投标负责人确认。 */
+/**
+ * 标书建议安全门：价格承诺、资质缺口和偏离项必须由投标负责人确认。
+ *
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Service
 public class BidProposalGuardService {
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record ProposalRequest(
             @NotBlank String tenderNo,
             @Min(0) @Max(500) int requiredClauses,
@@ -19,12 +26,18 @@ public class BidProposalGuardService {
             boolean qualificationGap,
             boolean bidOwnerApproved) {}
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record ProposalDecision(
             boolean draftAllowed,
             String route,
             int coverage,
             List<String> controls) {}
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public ProposalDecision inspect(ProposalRequest request) {
         int coverage = request.requiredClauses() == 0 ? 0
                 : Math.min(100, request.referencedClauses() * 100 / request.requiredClauses());

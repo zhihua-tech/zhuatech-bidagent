@@ -5,8 +5,14 @@ import jakarta.validation.constraints.NotBlank;
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Service
 public class BidComplianceGateService {
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public Result evaluate(Request request) {
         List<String> blockers = new ArrayList<>();
         if (!request.mandatoryDocumentsComplete()) blockers.add("强制投标文件不完整");
@@ -19,15 +25,24 @@ public class BidComplianceGateService {
         return new Result(request.bidNo(), decision, blockers.isEmpty(), List.copyOf(blockers),
                 List.of("DOCUMENTS", "CONFLICT", "AUTHORITY", "MARGIN", "SECURITY"));
     }
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Request(@NotBlank String bidNo, @Min(0) int hoursToDeadline,
                           @Min(-10000) int expectedMarginBps, @Min(-10000) int minimumMarginBps,
                           boolean mandatoryDocumentsComplete, boolean conflictDeclarationSigned,
                           boolean signingAuthorityValid, boolean securityReviewPassed) {
+        /**
+         * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+         */
         public Request {
             if (bidNo == null || bidNo.isBlank()) throw new IllegalArgumentException("bidNo is required");
             if (hoursToDeadline < 0) throw new IllegalArgumentException("hoursToDeadline must be non-negative");
         }
     }
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Result(String bidNo, String decision, boolean submissionAllowed,
                          List<String> blockers, List<String> controlsChecked) {}
 }

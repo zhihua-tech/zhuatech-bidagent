@@ -1,7 +1,13 @@
 /* Copyright 2026 上海如静知华信息科技有限公司 · https://www.zhuatech.cn/ */
 package cn.zhuatech.bidagent.config;
 import cn.zhuatech.bidagent.model.*; import cn.zhuatech.bidagent.repository.*; import org.springframework.boot.CommandLineRunner; import org.springframework.context.annotation.*; import org.springframework.security.crypto.password.PasswordEncoder; import java.time.LocalDate; import java.util.List;
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Configuration public class DataInitializer {
+ /**
+  * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+  */
  @Bean CommandLineRunner seed(OperatingUnitRepository units,WorkRecordRepository records,ResourceRegisterRepository resources,ReviewRecordRepository reviews,UserRepository users,PasswordEncoder encoder){return args->{if(units.count()>0)return;
   OperatingUnit first=units.save(new OperatingUnit("BID-EAST","华东投标组","商务投标中心",1800)),second=units.save(new OperatingUnit("BID-SOL","解决方案组","技术中心",1200)),third=units.save(new OperatingUnit("BID-RISK","商务风控组","商务投标中心",900));
   WorkRecord a=records.save(new WorkRecord("BID-260808-018","TENDER-CLOUD","某制造集团云平台建设项目",first,48,31,4,LocalDate.now().plusDays(2),WorkRecord.Status.RELEASED,"TENDER-V3")); WorkRecord b=records.save(new WorkRecord("BID-260808-012","TENDER-ERP","连锁零售 ERP 升级项目",second,36,36,0,LocalDate.now(),WorkRecord.Status.COMPLETED,"TENDER-V5")); WorkRecord c=records.save(new WorkRecord("BID-260808-021","TENDER-AI","园区企业知识助手项目",third,42,19,3,LocalDate.now().plusDays(3),WorkRecord.Status.RUNNING,"TENDER-V2"));
