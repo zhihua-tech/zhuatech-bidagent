@@ -1,5 +1,7 @@
 # BidAgent｜知华科技智能投标协同平台
 
+[简体中文](README.md) | [English](README.en.md)
+
 ## 企业级投标合规闸门
 
 新增强制文件、利益冲突、签署授权、截标时限、毛利底线和安全条款检查，详见 [投标合规闸门](docs/ENTERPRISE_BID_COMPLIANCE.md)。
