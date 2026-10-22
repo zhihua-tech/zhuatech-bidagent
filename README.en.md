@@ -1,5 +1,9 @@
 [简体中文](README.md) | **English**
 
+## Functional update: Bid artifact completeness and validity
+
+Checks a selected version of each required bid artifact for missing, expired, future-valid and current states without claiming to verify signatures or authenticity. Available to signed-in users with editable inputs, explicit validation and JSON export. See [API, examples and limitations](docs/AI_BUSINESS_UPGRADE_20261023.md). No external model calls or automatic business changes. Existing license and contact details are retained.
+
 # ZhuaTech BidAgent
 
 > A source-available enterprise project by [ZhuaTech](https://www.zhuatech.cn/) for enterprise AI-assisted workflows with human governance.
