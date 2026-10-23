@@ -1,0 +1,44 @@
+[
+  {
+    "patch": {},
+    "expected": {
+      "decision": "PASS",
+      "priceScore": "#33.3333",
+      "totalScore": "#83.3333"
+    },
+    "error": false,
+    "baseline": {
+      "decision": "PASS",
+      "priceScore": "#33.3333",
+      "totalScore": "#83.3333"
+    }
+  },
+  {
+    "patch": {
+      "bondExpiry": "2026-11-29"
+    },
+    "expected": {
+      "decision": "HOLD"
+    },
+    "error": false,
+    "baseline": {
+      "decision": "PASS",
+      "priceScore": "#33.3333",
+      "totalScore": "#83.3333"
+    }
+  },
+  {
+    "patch": {
+      "bondExpiry": "2026-11-30"
+    },
+    "expected": {
+      "decision": "PASS"
+    },
+    "error": false,
+    "baseline": {
+      "decision": "PASS",
+      "priceScore": "#33.3333",
+      "totalScore": "#83.3333"
+    }
+  }
+]
